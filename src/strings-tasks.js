@@ -363,10 +363,18 @@ function isPalindrome(/* str */) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  const res = sentence.split(' ');
+  let word = 0;
+  let res2 = '';
+  for (let i = 0; i < res.length; i += 1) {
+    if (res[i].length > word) {
+      word = res[i].length;
+      res2 = res[i];
+    }
+  }
+  return res2;
 }
-
 /**
  * Returns the string where each word is reversed.
  *
@@ -392,10 +400,18 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const arr = str.split('');
+  let res = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] === arr[i].toLowerCase()) {
+      res += arr[i].toUpperCase();
+    } else if (arr[i] === arr[i].toUpperCase()) {
+      res += arr[i].toLowerCase();
+    }
+  }
+  return res;
 }
-
 /**
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
